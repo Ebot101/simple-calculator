@@ -11,6 +11,8 @@ const Calculator = () => {
       axios
         .post("http://localhost:5001/calculate", { expression })
         .then((response) => {
+          console.log(response.data);
+
           setExpression(response.data.result);
         })
         .catch((error) => {
@@ -18,6 +20,10 @@ const Calculator = () => {
           alert("Error calculating expression");
         });
     } else if (value === "C") {
+      console.log(value);
+
+      console.log(expression + value);
+
       setExpression("");
     } else {
       setExpression(expression + value);
